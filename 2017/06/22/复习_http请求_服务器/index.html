@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>node03 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="http 状态码 5大类 2XX    正常请求 3XX    重定向 4XX    客户端错误 5XX    服务器端错误   掌握 200 304 404 500     DNS 解析 找到域名对应的 ip 地址   端口号 取值范围 0 ~ 65535   系统保留 0 ~ 1023   程序员可用 1024 ~ 49151      服务器 三板斧原理 输入 处理 输出   获得用户输入">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node03">
+<meta property="og:url" content="http://yoursite.com/2017/06/22/复习_http请求_服务器/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="http 状态码 5大类 2XX    正常请求 3XX    重定向 4XX    客户端错误 5XX    服务器端错误   掌握 200 304 404 500     DNS 解析 找到域名对应的 ip 地址   端口号 取值范围 0 ~ 65535   系统保留 0 ~ 1023   程序员可用 1024 ~ 49151      服务器 三板斧原理 输入 处理 输出   获得用户输入">
+<meta property="og:updated_time" content="2017-06-22T06:29:33.613Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="node03">
+<meta name="twitter:description" content="http 状态码 5大类 2XX    正常请求 3XX    重定向 4XX    客户端错误 5XX    服务器端错误   掌握 200 304 404 500     DNS 解析 找到域名对应的 ip 地址   端口号 取值范围 0 ~ 65535   系统保留 0 ~ 1023   程序员可用 1024 ~ 49151      服务器 三板斧原理 输入 处理 输出   获得用户输入">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -149,157 +153,286 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-复习_http请求_服务器" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      node03
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/22/复习_http请求_服务器/" class="archive-article-date">
+
+        
+        <a href="/2017/06/22/复习_http请求_服务器/" class="archive-article-date">
   	<time datetime="2017-06-22T06:07:34.638Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-22</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/22/复习_http请求_服务器/">node03</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="http"><a href="#http" class="headerlink" title="http"></a>http</h2><ul>
+<li>状态码<ul>
+<li>5大类<ul>
+<li>2XX    正常请求</li>
+<li>3XX    重定向</li>
+<li>4XX    客户端错误</li>
+<li>5XX    服务器端错误</li>
+</ul>
+</li>
+<li>掌握<ul>
+<li>200</li>
+<li>304</li>
+<li>404</li>
+<li>500</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>DNS 解析<ul>
+<li>找到域名对应的 ip 地址</li>
+</ul>
+</li>
+<li>端口号<ul>
+<li>取值范围<ul>
+<li>0 ~ 65535</li>
+</ul>
+</li>
+<li>系统保留<ul>
+<li>0 ~ 1023</li>
+</ul>
+</li>
+<li>程序员可用<ul>
+<li>1024 ~ 49151</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h2><ul>
+<li>三板斧原理<ul>
+<li>输入</li>
+<li>处理</li>
+<li>输出</li>
+</ul>
+</li>
+<li>获得用户输入<ul>
+<li>文件路径<ul>
+<li>req.url</li>
+</ul>
+</li>
+<li>请求方法<ul>
+<li>req.method</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>输出<ul>
+<li>概括讲就是拼接响应报文</li>
+<li>响应头<ul>
+<li>内容<ul>
+<li>状态码</li>
+<li>首部字段</li>
+</ul>
+</li>
+<li>实现<ul>
+<li>res.writeHead</li>
+<li>res.setHead</li>
+<li>res.statusCode        </li>
+<li>区别<ul>
+<li>res.writeHead<ul>
+<li>一次写完    方便</li>
+<li>不能修改</li>
+</ul>
+</li>
+<li>setHead    statusCode<ul>
+<li>灵活 分别设置</li>
+<li>麻烦</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>响应体<ul>
+<li>res.write<ul>
+<li>多次调用</li>
+<li>必须在end之前</li>
+</ul>
+</li>
+<li>res.end<ul>
+<li>调用且只能调用一次</li>
+<li>断开连接</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>路由</p>
+<ul>
+<li>概念<ul>
+<li>由 url中的文件路径 铺设一条路找到 资源 的过程</li>
+</ul>
+</li>
+<li>实现<ul>
+<li>if else 语法</li>
+<li>switch 语法</li>
+</ul>
+</li>
+<li>req.url 获得url中的文件路径和查询字符串<ul>
+<li>url 包解析 url 字符串 返回对象</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>资源</p>
+<ul>
+<li>文件资源<ul>
+<li>存储在服务器端</li>
+<li>包括各种文件<br>  .html<br>  .css<br>  .js<br>  .jpg<br>  .gif</li>
+</ul>
+</li>
+<li>计算资源<ul>
+<li>计算的过程        </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>浏览器对 html 文件解析</p>
+<ul>
+<li>如果发现代码中请求了资源，那么就发起一次请求<ul>
+<li>script 标签 src</li>
+<li>img 标签    src</li>
+<li>link 标签 href</li>
+</ul>
+</li>
+<li>form 表单的提交也是发起一次 http 请求</li>
+<li>a 标签的跳转也是一次 http 请求    </li>
+</ul>
+</li>
+<li>服务器接到的是 http 请求<ul>
+<li>无差别处理</li>
+<li>只认识请求，来了请求就处理</li>
+</ul>
+</li>
+</ul>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/06/22/复习_http请求_服务器/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/22/复习_nodejs初见_http基础/" class="archive-article-date">
-  	<time datetime="2017-06-22T06:07:23.799Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-22</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/22/复习_nodejs初见_http基础/">node04</a>
-    </h1>
+  
+    <a href="/2017/06/22/复习_nodejs初见_http基础/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">node04</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/22/笔记_02/" class="archive-article-date">
-  	<time datetime="2017-06-22T06:07:23.781Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/22/笔记_02/">node02</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/22/笔记/" class="archive-article-date">
-  	<time datetime="2017-06-22T06:07:05.459Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/22/笔记/">node01</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/22/ES笔记/" class="archive-article-date">
-  	<time datetime="2017-06-22T03:45:08.338Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/22/ES笔记/">理解ES</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -322,8 +455,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

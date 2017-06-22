@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>node04 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="nodejs 以及 windows nodejs 作用 高性能服务器 环境变量的原理 最基本的命令行操作 cd dir cls path  node 命令 node script.js node -v node -h  服务器 helloworld 代码  难点：参数是一个函数 写一个服务器的基本过程     123456//5步创建服务器1. http 模块的对象2. createServer3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node04">
+<meta property="og:url" content="http://yoursite.com/2017/06/22/复习_nodejs初见_http基础/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="nodejs 以及 windows nodejs 作用 高性能服务器 环境变量的原理 最基本的命令行操作 cd dir cls path  node 命令 node script.js node -v node -h  服务器 helloworld 代码  难点：参数是一个函数 写一个服务器的基本过程     123456//5步创建服务器1. http 模块的对象2. createServer3">
+<meta property="og:updated_time" content="2017-06-22T06:29:46.065Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="node04">
+<meta name="twitter:description" content="nodejs 以及 windows nodejs 作用 高性能服务器 环境变量的原理 最基本的命令行操作 cd dir cls path  node 命令 node script.js node -v node -h  服务器 helloworld 代码  难点：参数是一个函数 写一个服务器的基本过程     123456//5步创建服务器1. http 模块的对象2. createServer3">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -149,157 +153,308 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-复习_nodejs初见_http基础" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/22/复习_http请求_服务器/" class="archive-article-date">
-  	<time datetime="2017-06-22T06:07:34.638Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/22/复习_http请求_服务器/">node03</a>
+    <h1 class="article-title" itemprop="name">
+      node04
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/22/复习_nodejs初见_http基础/" class="archive-article-date">
+        
+        <a href="/2017/06/22/复习_nodejs初见_http基础/" class="archive-article-date">
   	<time datetime="2017-06-22T06:07:23.799Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-22</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/22/复习_nodejs初见_http基础/">node04</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="nodejs-以及-windows"><a href="#nodejs-以及-windows" class="headerlink" title="nodejs 以及 windows"></a>nodejs 以及 windows</h2><ol>
+<li>nodejs 作用 高性能服务器</li>
+<li>环境变量的原理</li>
+<li><p>最基本的命令行操作<br> cd<br> dir<br> cls<br> path</p>
+</li>
+<li><p>node 命令<br> node script.js<br> node -v<br> node -h</p>
+</li>
+<li><p>服务器 helloworld 代码</p>
+<ol>
+<li>难点：参数是一个函数</li>
+<li><p>写一个服务器的基本过程    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//5步创建服务器</div><div class="line">1. http 模块的对象</div><div class="line">2. createServer</div><div class="line">3. server 去监听</div><div class="line">4. 回调函数：1. 访问事件 -- 回调响应函数</div><div class="line">5. 回调函数：2. 端口监听事件 -- 回调函数</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>回调函数：<br> 当有事件发生的时候，被调用的函数。<br> EADDRINUSE:::3000<br> E – error<br> ADDR – address<br> INUSE – inuse</p>
+</li>
+</ol>
+<ol>
+<li><p>路径<br> 绝对路径：</p>
+<pre><code>盘符    开始
+/         （根目录）开始
+</code></pre><p> 相对路径</p>
+<pre><code>./
+../
+</code></pre></li>
+<li><p>进程 progress<br> 资源分配的最小的单位<br> 建立<br> 消亡<br> 进程与程序的区别</p>
+</li>
+</ol>
+<p>##网络</p>
+<h3 id="IP-地址"><a href="#IP-地址" class="headerlink" title="IP 地址"></a>IP 地址</h3><pre><code>- http://localhost/ 
+- 127.0.0.1                回环地址指向自己的机器
+- http://192.168.21.35/     ip地址
+- 端口号                     提供服务的房间
+- DNS 
+</code></pre><h3 id="http协议与网络基础"><a href="#http协议与网络基础" class="headerlink" title="http协议与网络基础"></a>http协议与网络基础</h3><ul>
+<li><p>网络访问过程</p>
+<ul>
+<li>url<ul>
+<li>协议名：协议的版本号</li>
+<li>域名/ip地址</li>
+<li>端口号</li>
+<li>文件路径</li>
+<li>查询字符串</li>
+</ul>
+</li>
+<li>IP<ul>
+<li>寻址</li>
+</ul>
+</li>
+<li>TCP<ul>
+<li>建立连接</li>
+</ul>
+</li>
+<li>请求报文<ul>
+<li>请求头<ul>
+<li>第一行<ul>
+<li>请求方法</li>
+<li>url</li>
+<li>版本号</li>
+</ul>
+</li>
+<li>请求首部字段<ul>
+<li>查表</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>请求体<ul>
+<li>空</li>
+<li>非空</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>响应报文<ul>
+<li>响应头<ul>
+<li>第一行<ul>
+<li>版本号</li>
+<li>状态码</li>
+<li>状态码说明字段</li>
+</ul>
+</li>
+<li>响应首部字段<ul>
+<li>查表</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>响应体<ul>
+<li>具体内容</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>TCP<ul>
+<li>断开连接</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>get和post 区别</p>
+<ol>
+<li>get 默认方法     post form故意设置</li>
+<li>get请求数据URL    post 数据 请求体</li>
+<li>get发送一个数据包    post 至少两个数据包</li>
+<li>get和post都不安全    post 比get更安全一点<pre><code>https 才是安全的
+</code></pre></li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>url<ul>
+<li>协议名<ul>
+<li>http</li>
+<li>https</li>
+</ul>
+</li>
+<li>服务器地址<ul>
+<li>ip 地址<ul>
+<li>内网</li>
+<li>公网</li>
+</ul>
+</li>
+<li>字符串</li>
+</ul>
+</li>
+<li>端口号<ul>
+<li>80 web服务</li>
+</ul>
+</li>
+<li>文件路径<ul>
+<li>/         根目录<ul>
+<li>必须存在<ul>
+<li>浏览器默认添加</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>/home/index.html</li>
+<li>/home/pic/logo.png</li>
+</ul>
+</li>
+<li>查询字符串<ul>
+<li>作用<ul>
+<li>通常表单</li>
+</ul>
+</li>
+<li>形式<ul>
+<li>?</li>
+<li>name=value</li>
+<li>&amp;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>片段标识符</li>
+<li><a href="http://www.baidu.com:80//home/index.html?name1=v1&amp;name2=v2#asdf" target="_blank" rel="external">http://www.baidu.com:80//home/index.html?name1=v1&amp;name2=v2#asdf</a></li>
+</ul>
+</li>
+</ul>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/06/22/复习_nodejs初见_http基础/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/22/笔记_02/" class="archive-article-date">
-  	<time datetime="2017-06-22T06:07:23.781Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-22</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/22/笔记_02/">node02</a>
-    </h1>
+    <a href="/2017/06/22/复习_http请求_服务器/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          node03
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/06/22/笔记_02/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">node02</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/22/笔记/" class="archive-article-date">
-  	<time datetime="2017-06-22T06:07:05.459Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/22/笔记/">node01</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/22/ES笔记/" class="archive-article-date">
-  	<time datetime="2017-06-22T03:45:08.338Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/22/ES笔记/">理解ES</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -322,8 +477,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
